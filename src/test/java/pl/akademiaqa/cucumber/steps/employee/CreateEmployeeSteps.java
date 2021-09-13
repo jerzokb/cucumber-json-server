@@ -21,14 +21,6 @@ public class CreateEmployeeSteps {
     @When("I create new employee")
     public void i_create_new_employee() {
         createEmployee();
-//        EmployeeDto defaultEmployee = employeePayload.getDefaultEmployee();
-//        EmployeeResponse employeeResponse = createEmployeeRequest.createEmployee(defaultEmployee);
-//
-//        assertThat(employeeResponse.getFirstName()).isEqualTo(defaultEmployee.getFirstName());
-//        assertThat(employeeResponse.getLastName()).isEqualTo(defaultEmployee.getLastName());
-//        assertThat(employeeResponse.getEmail()).isEqualTo(defaultEmployee.getEmail());
-//
-//        context.setEmployeeResponse(employeeResponse);
     }
 
     @Given("Employee already exist")
@@ -45,5 +37,6 @@ public class CreateEmployeeSteps {
         assertThat(employeeResponse.getEmail()).isEqualTo(defaultEmployee.getEmail());
 
         context.setEmployeeResponse(employeeResponse);
+        context.setEmployee(defaultEmployee);
     }
 }

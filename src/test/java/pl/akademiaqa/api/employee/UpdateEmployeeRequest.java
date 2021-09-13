@@ -5,6 +5,7 @@ import pl.akademiaqa.api.BaseRequest;
 import pl.akademiaqa.dto.EmployeeDto;
 import pl.akademiaqa.handlers.employee.CreateEmployeeResponse;
 import pl.akademiaqa.handlers.employee.EmployeeResponse;
+import pl.akademiaqa.handlers.employee.UpdateEmployeeResponse;
 import pl.akademiaqa.url.JsonServerUrl;
 
 import static io.restassured.RestAssured.given;
@@ -27,6 +28,6 @@ public class UpdateEmployeeRequest {
                 .log().ifError()
                 .extract()
                 .response()
-                .as(CreateEmployeeResponse.class);
+                .as(UpdateEmployeeResponse.class);
     }
 }

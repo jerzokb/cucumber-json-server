@@ -39,28 +39,4 @@ public class EmployeePayload {
 
         return employee;
     }
-
-    public EmployeeDto getUpdatedEmployee() {
-        address.setStreet("Sezamkowa");
-        address.setSuite("12");
-        address.setCity("New York");
-        address.setZipcode("123-123");
-
-        company.setCompanyName("Akademia QA");
-        company.setTaxNumber("999-999-999");
-        company.setCompanyPhone("800-700-900");
-
-        employee.setFirstName("Joe");
-        employee.setLastName("Black");
-        employee.setUsername("JoeBlack");
-        employee.setEmail("jblack@akademiaqa.com");
-        employee.setPhone("123123123");
-        employee.setWebsite("www.akademiaqa.com");
-        employee.setRole("qa");
-        employee.setType("b2b");
-        employee.setAddress(address);
-        employee.setCompany(company);
-
-        return employee;
-    }
 }
