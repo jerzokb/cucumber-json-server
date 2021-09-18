@@ -1,5 +1,6 @@
 Feature: Update bug
 
+  @cleanup_bug
   Scenario: I am able to close bug
     Given bug already exist
     When I close existing bug

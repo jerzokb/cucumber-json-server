@@ -1,5 +1,6 @@
 Feature: Create bug
 
+  @cleanup_bugs
   Scenario: I am able to create multiple bugs
     Given I read all bugs
     When I create multiple bugs

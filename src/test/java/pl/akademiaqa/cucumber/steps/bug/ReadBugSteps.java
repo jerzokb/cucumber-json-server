@@ -28,6 +28,7 @@ public class ReadBugSteps {
 
     @Given("I read all bugs")
     public void i_read_all_bugs() {
+
         allBugs = readBugRequest.readAllBugs();
     }
 
@@ -36,5 +37,17 @@ public class ReadBugSteps {
         final List<BugResponse> bugsAfterCreate = readBugRequest.readAllBugs();
         assertThat(bugsAfterCreate).hasSizeGreaterThan(allBugs.size());
         assertThat(bugsAfterCreate).containsAll(context.getBugResponseList());
+    }
+
+    @Then("I should not see deleted bug on bug list")
+    public void i_should_not_see_deleted_bug_on_bug_list() {
+        List<BugResponse> allBugsAfterDelete = readBugRequest.readAllBugs();
+        assertThat(allBugsAfterDelete).doesNotContain(context.getBugResponse());
+    }
+
+    @Then("I should not see deleted bugs on bug list")
+    public void i_should_not_see_deleted_bugs_on_bug_list() {
+        List<BugResponse> allBugsAfterDelete = readBugRequest.readAllBugs();
+        assertThat(allBugsAfterDelete).doesNotContain(context.getBugResponse());
     }
 }
